@@ -53,6 +53,13 @@ public class TestPlannerGeneral {
         System.out.println(relNode.explain());
     }
 
+    private static void testOptimizedVolcanoPlannerTPCDS(final File file) throws Exception {
+        final String sqlQuery = getTestQuery(file);
+        final SQL2Log sql2Log = new SQL2Log(sqlQuery);
+        final RelNode relNode = sql2Log.getLogOptimizedVolcano();
+        System.out.println(relNode.explain());
+    }
+
     public static void main(String[] args){
 
        //Calcite Planner Test
@@ -67,7 +74,7 @@ public class TestPlannerGeneral {
         //Calcite Volcano Planner Test
         getTestDirectoriesTPCDS().stream().forEach(f -> {
             try {
-                testOptimizedPlannerTPCDS(f);
+                testOptimizedVolcanoPlannerTPCDS(f);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
