@@ -64,14 +64,14 @@ public class TestPlannerGeneral {
             }
         });
 
-//        //Calcite Volcano Planner Test
-//        getTestDirectoriesTPCDS().stream().forEach(f -> {
-//            try {
-//                testOptimizedPlannerTPCDS(f);
-//            } catch (Exception e) {
-//                throw new RuntimeException(e);
-//            }
-//        });
+        //Calcite Volcano Planner Test
+        getTestDirectoriesTPCDS().stream().forEach(f -> {
+            try {
+                testOptimizedPlannerTPCDS(f);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
 
     }
     /**
